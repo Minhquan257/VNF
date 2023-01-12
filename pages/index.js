@@ -21,12 +21,12 @@ const ButtonGroup = (isMobile) => {
     />
 
     <Button
-      btnName="Contact"
+      btnName="Login"
       classStyles={`z-10 mx-4 rounded-xl active:scale-110 duration-100 ${
         isMobile && 'text-2xl px-16 py-4 sm:px-8 sm:py-2 sm:text-xl'
       }`}
       handleClick={() => {
-        router.push('/contact')
+        router.push('/login')
       }}
     />
     </div>
