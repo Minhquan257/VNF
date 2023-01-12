@@ -20,7 +20,7 @@ const ItemsGroup = ({ isMobile, active, setIsShown }) => {
     return (
         <div
         onClick={handleClickOutside}
-        className="fixed top-12 inset-x-0 z-10 flex justify-end"
+        className="fixed top-20 inset-x-0 z-10 flex justify-end"
         >
         <div 
         ref={modalRef}
@@ -191,14 +191,14 @@ const Navbar = () => {
   }, [router.pathname]);
 
     return(
-      <nav className='flex flex-row'>
+      <nav className='flex flex-row border-b-2 border-prim-gray-3 py-5'>
         <div className="flex justify-start flex-1 ml-7 mt-2">
         <Link href="/">
           <div className="flex flex-row items-center justify-center cursor-pointer md:hidden">
             <Image
               src={image.logo}
-              width={60}
-              height={60}
+              width={55}
+              height={55}
               alt="logo"
             />
             <p className="flex flex-row dark:text-white text-prim-black-1 font-extrabold font-poppins text-3xl ml-2 mt-1.5">
