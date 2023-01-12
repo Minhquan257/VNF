@@ -13,6 +13,7 @@ import search from './search.png'
 import trolley from './trolley.png'
 import moon from './moon.png'
 import bg from './bg.jpg'
+import cross from './cross.png'
 
 export default {
     bannerslogan,
@@ -31,4 +32,5 @@ export default {
     trolley,
     moon,
     bg,
+    cross,
 }

@@ -9,7 +9,7 @@ const MyApp = ({ Component, pageProps }) => (
     <ThemeProvider attribute="class">
       <Head>
         <title>SeaFood</title>
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" href="/seafood1.png" />
       </Head>
       <div className="bg-white dark:bg-prim-dark">
         <Navbar />

@@ -2,7 +2,7 @@ import react from "react";
 
 const Footer = () => {
     return(
-        <div className="border-t-2 border-prim-gray-3">
+        <div className="border-t-1 shadow-lg border-prim-gray-3">
             <p className="text-center font-poppins font-bold text-xl my-5">VIET NGUYEN FOODS COMPANY LIMITED (VNFOODSCO)</p>
             <ul className="flex flex-row justify-center items-center pb-5">
                 <li className="mx-5">Tel/Fax: +84-2838109527</li>

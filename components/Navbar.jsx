@@ -7,10 +7,10 @@ import Link from 'next/link';
 import { useRef } from 'react';
 
 import image from '../image';
-// -----------------------------------------ItemGroup-------------------------------------------------
+// -----------------------------------------ExportItemGroup-------------------------------------------------
 const ItemsGroup = ({ isMobile, active, setIsShown }) => {
     const modalRef = useRef(false);
-
+    const { theme } = useTheme();
     const handleClickOutside = (event) => {
         if (modalRef.current && !modalRef.current.contains(event.target)) {
           setIsShown(false);
@@ -25,7 +25,21 @@ const ItemsGroup = ({ isMobile, active, setIsShown }) => {
         <div 
         ref={modalRef}
         className="flex flex-col bg-white dark:bg-prim-dark rounded-lg shadow-xl w-1/5"
-        >        
+        >
+        <div className="flex justify-end mt-4 mr-4">
+          <div
+            className="relative w-3 h-3 cursor-pointer"
+            onClick= {() => {
+              setIsShown(false);
+            }}
+          >
+            <Image
+              src={image.cross}
+              layout="fill"
+              className={theme === 'light' ? 'filter invert' : undefined}
+            />
+          </div>
+        </div>        
         <ul>
            <li
             className={`flex justify-center font-poppins items-center font-semibold text-lg 
@@ -63,13 +77,14 @@ const ItemsGroup = ({ isMobile, active, setIsShown }) => {
 const MenuItems = ({ isMobile, active, setActive }) => {
     const [ isShown, setIsShown ] = useState(false)
     
+    
     return (
       <ul className='flex flex-row'>
             <li
             onClick={() => {
               setActive('Home');
             }}
-            className={`flex justify-center font-poppins items-center font-semibold text-base 
+            className={`flex justify-center font-poppins items-center font-semibold text-2xl 
             hover:text-prim-black-4 dark:hover:text-white mx-10 text-prim-gray-2 
             ${
               active === 'Home'
@@ -86,7 +101,7 @@ const MenuItems = ({ isMobile, active, setActive }) => {
             onClick={() => {
               setActive('News');
             }}
-            className={`flex justify-center font-poppins items-center font-semibold text-base 
+            className={`flex justify-center font-poppins items-center font-semibold text-2xl 
             hover:text-prim-black-4 dark:hover:text-white mx-10 text-prim-gray-2 
             ${
               active === 'News'
@@ -103,7 +118,7 @@ const MenuItems = ({ isMobile, active, setActive }) => {
             onClick={() => {
               setActive('IContact');
             }}
-            className={`flex justify-center font-poppins items-center font-semibold text-base 
+            className={`flex justify-center font-poppins items-center font-semibold text-2xl 
             hover:text-prim-black-4 dark:hover:text-white mx-10 text-prim-gray-2 
             ${
               active === 'Contact'
@@ -120,7 +135,7 @@ const MenuItems = ({ isMobile, active, setActive }) => {
             onClick={() => {
               setActive('Import');
             }}
-            className={`flex justify-center font-poppins items-center font-semibold text-base 
+            className={`flex justify-center font-poppins items-center font-semibold text-2xl 
             hover:text-prim-black-4 dark:hover:text-white mx-10 text-prim-gray-2 
             ${
               active === 'Import'
@@ -138,10 +153,10 @@ const MenuItems = ({ isMobile, active, setActive }) => {
               setActive('Export')
               setIsShown(true)}}
             onDoubleClick={() => setIsShown(false)}
-            className={`flex justify-center font-poppins items-center font-semibold text-base 
+            className={`flex justify-center font-poppins items-center font-semibold text-2xl 
             hover:text-prim-black-4 dark:hover:text-white mx-10 text-prim-gray-2 mr-36
             ${
-              active === 'News'
+              active === 'Export'
                 ? 'text-prim-black-4 dark:text-white'
                 : 'text-prim-gray-2'
             }
@@ -174,6 +189,8 @@ const MenuItems = ({ isMobile, active, setActive }) => {
       case '/import':
         active !== 'Import' && setActive('Import');
         break;
+      case '':
+        active !== 'Export' && setActive('Export');
       default:
         setActive('');
         break;
@@ -191,12 +208,12 @@ const Navbar = () => {
   }, [router.pathname]);
 
     return(
-      <nav className='flex flex-row border-b-2 border-prim-gray-3 py-5'>
+      <nav className='flex flex-row border-b-1 shadow-lg border-prim-gray-3 py-5'>
         <div className="flex justify-start flex-1 ml-7 mt-2">
         <Link href="/">
           <div className="flex flex-row items-center justify-center cursor-pointer md:hidden">
             <Image
-              src={image.logo}
+              src={image.seafood1}
               width={55}
               height={55}
               alt="logo"
