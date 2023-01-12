@@ -24,7 +24,7 @@ const ItemsGroup = ({ isMobile, active, setIsShown }) => {
         >
         <div 
         ref={modalRef}
-        className="flex flex-col bg-white dark:bg-prim-dark rounded-lg shadow-lg w-1/5"
+        className="flex flex-col bg-white dark:bg-prim-dark rounded-lg shadow-xl w-1/5"
         >        
         <ul>
            <li
