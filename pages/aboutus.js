@@ -1,8 +1,56 @@
+import React from 'react';
+// import Image from 'next/image';
+// import { Carousel } from 'flowbite-react'
+import Listimage from '../components/Carousel'
+
+import image from '../image';
+
 const Aboutus = () => {
     return(
         <div className="flex flex-col px-36">
-            <div>list image</div>
-
+            <div className="h-full mt-10">
+                {/* <Carousel slideInterval={1000}>
+                    <div>                        
+                        <Image 
+                            src = {image.product3}
+                            alt='product'
+                        />
+                        <Image 
+                            src = {image.product2}
+                            alt='product'
+                        />
+                    </div>
+                    <div>
+                        <Image 
+                            src = {image.product9}
+                            alt='product'
+                        />
+                        <Image 
+                            src = {image.product4}
+                            alt='product'
+                        />
+                    </div>
+                    <div>
+                        <Image 
+                            src = {image.product6}
+                            alt='product'
+                        />
+                        <Image 
+                            src = {image.product8}
+                            alt='product'
+                        />
+                    </div>
+                    <Image 
+                        src={image.bannerslogan}
+                        alt='use'
+                    />
+                    <Image 
+                        src={image.bg}
+                        alt='use'
+                    />
+                </Carousel> */}
+                <Listimage />
+            </div>
             <div>            
                 <p className="dark:text-white text-prim-black-1 font-poppins font-semibold text-lg my-4">About us</p>
                 <p className="dark:text-white text-prim-black-1 font-poppins my-1">By thorough understand of product quality as well as customer demands, we are confident in our ability to provide customers premium value products at reasonable prices.</p>

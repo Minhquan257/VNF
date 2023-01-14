@@ -1,5 +1,8 @@
 module.exports = {
-  content: ['./pages/**/*.{js,jsx}', './components/**/*.{js,jsx}'],
+  content: [
+    './pages/**/*.{js,jsx}', './components/**/*.{js,jsx}',
+    "./node_modules/flowbite/**/*.js"
+],
   darkMode: 'class',
   theme: {
     extend: {
@@ -71,5 +74,8 @@ module.exports = {
       textColor: ['dark'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin'),
+    require('tw-elements/dist/plugin'),
+  ],
 };

@@ -14,6 +14,8 @@ import trolley from './trolley.png'
 import moon from './moon.png'
 import bg from './bg.jpg'
 import cross from './cross.png'
+import bg1 from './bg1.jpg'
+import bannerslogan1 from './bannerslogan1.jpg'
 
 export default {
     bannerslogan,
@@ -33,4 +35,6 @@ export default {
     moon,
     bg,
     cross,
+    bg1,
+    bannerslogan1
 }

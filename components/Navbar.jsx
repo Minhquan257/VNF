@@ -20,7 +20,7 @@ const ItemsGroup = ({ isMobile, active, setIsShown }) => {
     return (
         <div
         onClick={handleClickOutside}
-        className="fixed top-20 inset-x-0 z-10 flex justify-end"
+        className="fixed top-20 inset-x-0 z-10 flex justify-center"
         >
         <div 
         ref={modalRef}
@@ -116,20 +116,27 @@ const MenuItems = ({ isMobile, active, setActive }) => {
 
           <li
             onClick={() => {
-              setActive('IContact');
-            }}
+              setActive('Export')
+              setIsShown(true)}}
+            onDoubleClick={() => setIsShown(false)}
             className={`flex justify-center font-poppins items-center font-semibold text-2xl 
             hover:text-prim-black-4 dark:hover:text-white mx-10 text-prim-gray-2 
             ${
-              active === 'Contact'
+              active === 'Export'
                 ? 'text-prim-black-4 dark:text-white'
                 : 'text-prim-gray-2'
             }
             ${isMobile && 'my-3 text-2xl'}
             `}
           >
-            <Link href='/contact'>{'Contact'}</Link>
+            <p className='hover:cursor-pointer'>Export</p>
           </li>
+
+          {isShown && (
+            <div>
+            <ItemsGroup isMobile active setIsShown={setIsShown} />
+            </div>
+          )}
 
           <li
             onClick={() => {
@@ -150,27 +157,22 @@ const MenuItems = ({ isMobile, active, setActive }) => {
           
           <li
             onClick={() => {
-              setActive('Export')
-              setIsShown(true)}}
-            onDoubleClick={() => setIsShown(false)}
+              setActive('Contact');
+            }}
             className={`flex justify-center font-poppins items-center font-semibold text-2xl 
             hover:text-prim-black-4 dark:hover:text-white mx-10 text-prim-gray-2 mr-36
             ${
-              active === 'Export'
+              active === 'Contact'
                 ? 'text-prim-black-4 dark:text-white'
                 : 'text-prim-gray-2'
             }
             ${isMobile && 'my-3 text-2xl'}
             `}
           >
-            <p className='hover:cursor-pointer'>Export</p>
+            <Link href='/contact'>{'Contact'}</Link>
           </li>
 
-          {isShown && (
-            <div>
-            <ItemsGroup isMobile active setIsShown={setIsShown} />
-            </div>
-          )}
+          
       </ul>
     );
   };
@@ -218,14 +220,14 @@ const Navbar = () => {
               height={55}
               alt="logo"
             />
-            <p className="flex flex-row dark:text-white text-prim-black-1 font-extrabold font-poppins text-3xl ml-2 mt-1.5">
+            {/* <p className="flex flex-row dark:text-white text-prim-black-1 font-extrabold font-poppins text-3xl ml-2 mt-1.5">
               VNFOODSCO
-            </p>
+            </p> */}
           </div>
         </Link>
         </div>
 
-        <div className='flex justify-end'>
+        <div className='mr-48'>
             <MenuItems isMobile active={active} setActive={setActive}/>
         </div>
 
