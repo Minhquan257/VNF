@@ -1,8 +1,5 @@
 module.exports = {
-  content: [
-    './pages/**/*.{js,jsx}', './components/**/*.{js,jsx}',
-    "./node_modules/flowbite/**/*.js"
-],
+  content: ['./pages/**/*.{js,jsx}', './components/**/*.{js,jsx}'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -25,7 +22,6 @@ module.exports = {
       },
       margin: {
         30: '120px',
-        900: '900px'
       },
       width: {
         200: '200px',
@@ -42,9 +38,6 @@ module.exports = {
         700: '700px',
         900: '900px',
       },
-      inset: {
-        1150: '1150px',
-      }
     },
     screens: {
       lg: { max: '1800px' },
@@ -74,8 +67,5 @@ module.exports = {
       textColor: ['dark'],
     },
   },
-  plugins: [
-    require('flowbite/plugin'),
-    require('tw-elements/dist/plugin'),
-  ],
+  plugins: [],
 };

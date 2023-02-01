@@ -27,7 +27,6 @@ export default {
     product4,
     product5,
     product6,
-    product6,
     product7,
     seafood1,
     search,
